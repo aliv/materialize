@@ -47,7 +47,7 @@
   }
 
   .col {
-    float: left;
+    float: $global-left;
     box-sizing: border-box;
     padding: 0 $gutter-width / 2;
     min-height: 1px;
@@ -63,7 +63,7 @@
       &.m#{$i},
       &.l#{$i},
       &.xl#{$i} {
-        margin-left: auto;
+        margin-#{$global-left}: auto;
         left: auto;
         right: auto;
       }
@@ -83,7 +83,7 @@
     @while $i <= $num-cols {
       $perc: unquote((100 / ($num-cols / $i)) + "%");
       &.offset-s#{$i} {
-        margin-left: $perc;
+        margin-#{$global-left}: $perc;
       }
       &.pull-s#{$i} {
         right: $perc;
@@ -109,7 +109,7 @@
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
         &.offset-m#{$i} {
-          margin-left: $perc;
+          margin-#{$global-left}: $perc;
         }
         &.pull-m#{$i} {
           right: $perc;
@@ -136,7 +136,7 @@
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
         &.offset-l#{$i} {
-          margin-left: $perc;
+          margin-#{$global-left}: $perc;
         }
         &.pull-l#{$i} {
           right: $perc;
@@ -163,7 +163,7 @@
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
         &.offset-xl#{$i} {
-          margin-left: $perc;
+          margin-#{$global-left}: $perc;
         }
         &.pull-xl#{$i} {
           right: $perc;
