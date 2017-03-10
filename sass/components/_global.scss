@@ -19,7 +19,7 @@ main {
 
 ul {
   &:not(.browser-default) {
-    padding-left: 0;
+    padding-#{$global-left}: 0;
     list-style-type: none;
 
     li {
@@ -100,8 +100,8 @@ a {
 
 blockquote {
   margin: 20px 0;
-  padding-left: 1.5rem;
-  border-left: 5px solid $primary-color;
+  padding-#{$global-left}: 1.5rem;
+  border-#{$global-left}: 5px solid $primary-color;
 }
 
 // Icon Styles
@@ -204,7 +204,7 @@ video.responsive-video {
   [class^="mdi-"], [class*="mdi-"],
   i.material-icons {
     display: inline-block;
-    float: left;
+    float: $global-left;
     font-size: 24px;
   }
 
@@ -406,7 +406,7 @@ thead {
 td, th{
   padding: 15px 5px;
   display: table-cell;
-  text-align: left;
+  text-align: $global-left;
   vertical-align: middle;
   border-radius: 2px;
 }
@@ -431,10 +431,10 @@ td, th{
       vertical-align: top;
     }
 
-    th { text-align: left; }
+    th { text-align: $global-left; }
     thead {
       display: block;
-      float: left;
+      float: $global-left;
 
       tr {
         display: block;
@@ -459,26 +459,26 @@ td, th{
     }
     th {
       display: block;
-      text-align: right;
+      text-align: $global-right;
     }
     td {
       display: block;
       min-height: 1.25em;
-      text-align: left;
+      text-align: $global-left;
     }
     tr { padding: 0 10px; }
 
     /* sort out borders */
     thead {
       border: 0;
-      border-right: 1px solid $table-border-color;
+      border-#{$global-right}: 1px solid $table-border-color;
     }
 
     &.bordered {
-      th { border-bottom: 0; border-left: 0; }
+      th { border-bottom: 0; border-#{$global-left}: 0; }
       td { border-left: 0; border-right: 0; border-bottom: 0; }
       tr { border: 0; }
-      tbody tr { border-right: 1px solid $table-border-color; }
+      tbody tr { border-#{$global-right}: 1px solid $table-border-color; }
     }
 
   }
@@ -504,7 +504,7 @@ td, th{
     // Avatar Collection
     &.avatar {
       min-height: 84px;
-      padding-left: 72px;
+      padding-#{$global-left}: 72px;
       position: relative;
 
       .circle {
@@ -512,7 +512,7 @@ td, th{
         width: 42px;
         height: 42px;
         overflow: hidden;
-        left: 15px;
+        #{$global-left}: 15px;
         display: inline-block;
         vertical-align: middle;
       }
@@ -536,7 +536,7 @@ td, th{
       .secondary-content {
         position: absolute;
         top: 16px;
-        right: 16px;
+        #{$global-right}: 16px;
       }
 
     }
@@ -573,17 +573,17 @@ td, th{
       padding: 10px 20px;
     }
     .collection-item {
-      padding-left: 30px;
+      padding-#{$global-left}: 30px;
     }
     .collection-item.avatar {
-      padding-left: 72px;
+      padding-#{$global-left}: 72px;
     }
   }
 
 }
 // Made less specific to allow easier overriding
 .secondary-content {
-  float: right;
+  float: $global-right;
   color: $secondary-color;
 }
 .collapsible .collection {
@@ -603,7 +603,7 @@ td, th{
     iframe, object, embed {
       position: absolute;
       top: 0;
-      left: 0;
+      #{$global-left}: 0;
       width: 100%;
       height: 100%;
     }
@@ -622,7 +622,7 @@ td, th{
   .determinate {
     position: absolute;
     top: 0;
-    left: 0;
+    #{$global-left}: 0;
     bottom: 0;
     background-color: $progress-bar-color;
     transition: width .3s linear;
@@ -634,7 +634,7 @@ td, th{
       position: absolute;
       background-color: inherit;
       top: 0;
-      left:0;
+      #{$global-left}:0;
       bottom: 0;
       will-change: left, right;
       // Custom bezier
@@ -646,7 +646,7 @@ td, th{
       position: absolute;
       background-color: inherit;
       top: 0;
-      left:0;
+      #{$global-left}:0;
       bottom: 0;
       will-change: left, right;
       // Custom bezier
@@ -657,31 +657,31 @@ td, th{
 }
 @keyframes indeterminate {
     0% {
-      left: -35%;
-      right:100%;
+      #{$global-left}: -35%;
+      #{$global-right}:100%;
     }
     60% {
-      left: 100%;
-      right: -90%;
+      #{$global-left}: 100%;
+      #{$global-right}: -90%;
     }
     100% {
-      left: 100%;
-      right: -90%;
+      #{$global-left}: 100%;
+      #{$global-right}: -90%;
     }
 }
 
 @keyframes indeterminate-short {
     0% {
-      left: -200%;
-      right: 100%;
+      #{$global-left}: -200%;
+      #{$global-right}: 100%;
     }
     60% {
-      left: 107%;
-      right: -8%;
+      #{$global-left}: 107%;
+      #{$global-right}: -8%;
     }
     100% {
-      left: 107%;
-      right: -8%;
+      #{$global-left}: 107%;
+      #{$global-right}: -8%;
     }
 }
 
