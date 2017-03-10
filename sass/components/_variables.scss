@@ -27,7 +27,7 @@
 //  22. Flow Text
 //  23. Collections
 //  24. Progress Bar
-
+//  25. Direction
 
 
 // 1. Colors
@@ -319,3 +319,10 @@ $collection-line-height: 1.5rem !default;
 // ==========================================================================
 
 $progress-bar-color: $secondary-color !default;
+
+
+// 25. Direction
+// ==========================================================================
+$global-direction: ltr !default;
+$global-left: if($global-direction == rtl, right, left);
+$global-right: if($global-direction == rtl, left, right);
