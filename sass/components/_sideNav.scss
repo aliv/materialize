@@ -1,7 +1,7 @@
 .side-nav {
   position: fixed;
   width: 300px;
-  left: 0;
+  #{$global-left}: 0;
   top: 0;
   margin: 0;
   transform: translateX(-100%);
@@ -65,10 +65,10 @@
     & > i,
     & > [class^="mdi-"], li > a > [class*="mdi-"],
     & > i.material-icons {
-      float: left;
+      float: $global-left;
       height: $sidenav-item-height;
       line-height: $sidenav-line-height;
-      margin: 0 ($sidenav-padding * 2) 0 0;
+      margin: if($global-direction == ltr, 0 ($sidenav-padding * 2) 0 0, 0 0 0 ($sidenav-padding * 2));
       width: $sidenav-item-height / 2;
       color: rgba(0,0,0,.54);
     }
@@ -153,7 +153,7 @@
 
 // Fixed side-nav shown
 .side-nav.fixed {
-  left: 0;
+  #{$global-left}: 0;
   transform: translateX(0);
   position: fixed;
 
