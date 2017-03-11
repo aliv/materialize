@@ -132,7 +132,7 @@
       color: $card-bg-color;
       position: absolute;
       bottom: 0;
-      left: 0;
+      #{$global-left}: 0;
       max-width: 100%;
       padding: $card-padding;
     }
@@ -165,7 +165,7 @@
 
     a:not(.btn):not(.btn-large):not(.btn-floating) {
       color: $card-link-color;
-      margin-right: $card-padding;
+      margin-#{$global-right}: $card-padding;
       transition: color .3s ease;
       text-transform: uppercase;
 
@@ -179,7 +179,7 @@
     background-color: $card-bg-color;
     width: 100%;
     overflow-y: auto;
-    left: 0;
+    #{$global-left}: 0;
     top: 100%;
     height: 100%;
     z-index: 3;
