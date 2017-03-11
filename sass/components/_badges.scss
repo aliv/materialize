@@ -2,13 +2,13 @@
 span.badge {
   min-width: 3rem;
   padding: 0 6px;
-  margin-left: 14px;
+  margin-#{$global-left}: 14px;
   text-align: center;
   font-size: 1rem;
   line-height: $badge-height;
   height: $badge-height;
   color: color('grey', 'darken-1');
-  float: right;
+  float: $global-right;
   box-sizing: border-box;
 
   &.new {
@@ -29,7 +29,7 @@ span.badge {
 nav ul a span.badge {
   display: inline-block;
   float: none;
-  margin-left: 4px;
+  margin-#{$global-left}: 4px;
   line-height: $badge-height;
   height: $badge-height;
 }
