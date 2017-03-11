@@ -39,7 +39,7 @@ select {
   span.caret {
     color: initial;
     position: absolute;
-    right: 0;
+    #{$global-right}: 0;
     top: 0;
     bottom: 0;
     height: 10px;
@@ -86,12 +86,12 @@ select:disabled {
 
 // Prefix Icons
 .prefix ~ .select-wrapper {
-  margin-left: 3rem;
+  margin-#{$global-left}: 3rem;
   width: 92%;
   width: calc(100% - 3rem);
 }
 
-.prefix ~ label { margin-left: 3rem; }
+.prefix ~ label { margin-#{$global-left}: 3rem; }
 
 // Icons
 .select-dropdown li {
@@ -99,7 +99,7 @@ select:disabled {
     height: $dropdown-item-height - 10;
     width: $dropdown-item-height - 10;
     margin: 5px 15px;
-    float: right;
+    float: $global-right;
   }
 }
 
@@ -116,6 +116,6 @@ select:disabled {
   }
 
   & ~ li.optgroup-option {
-    padding-left: 1rem;
+    padding-#{$global-left}: 1rem;
   }
 }

@@ -5,14 +5,14 @@
 [type="radio"]:not(:checked),
 [type="radio"]:checked {
   position: absolute;
-  left: -9999px;
+  #{$global-left}: -9999px;
   opacity: 0;
 }
 
 [type="radio"]:not(:checked) + label,
 [type="radio"]:checked + label {
   position: relative;
-  padding-left: 35px;
+  padding-#{$global-left}: 35px;
   cursor: pointer;
   display: inline-block;
   height: 25px;
@@ -28,7 +28,7 @@
 [type="radio"] + label:after {
   content: '';
   position: absolute;
-  left: 0;
+  #{$global-left}: 0;
   top: 0;
   margin: 4px;
   width: 16px;
@@ -83,7 +83,7 @@
 
 /* Focused styles */
 [type="radio"].tabbed:focus + label:before {
-  box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+  box-shadow: if($global-direction == ltr, 0 0 0 10px rgba(0,0,0,.1), 0 10px 0 0 rgba(0,0,0,.1));
 }
 
 /* Disabled Radio With gap */

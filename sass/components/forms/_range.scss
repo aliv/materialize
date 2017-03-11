@@ -33,7 +33,7 @@ input[type=range] + .thumb {
   border-radius: 50%;
   background-color: $radio-fill-color;
   top: 10px;
-  margin-left: -6px;
+  margin-#{$global-left}: -6px;
 
   transform-origin: 50% 50%;
   transform: rotate(-45deg);
@@ -52,7 +52,7 @@ input[type=range] + .thumb {
 
     .value {
       color: $input-background;
-      margin-left: -1px;
+      margin-#{$global-left}: -1px;
       margin-top: 8px;
       font-size: 10px;
     }

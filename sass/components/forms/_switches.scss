@@ -23,7 +23,7 @@
 
     &:after {
       background-color: $switch-bg-color;
-      left: 24px;
+      #{$global-left}: 24px;
     }
   }
 }
@@ -36,7 +36,7 @@
   height: 15px;
   background-color: $switch-unchecked-lever-bg;
   border-radius: $switch-radius;
-  margin-right: 10px;
+  margin-#{$global-right}: 10px;
   transition: background 0.3s ease;
   vertical-align: middle;
   margin: 0 16px;
@@ -50,7 +50,7 @@
     background-color: $switch-unchecked-bg;
     border-radius: 21px;
     box-shadow: 0 1px 3px 1px rgba(0,0,0,.4);
-    left: -5px;
+    #{$global-left}: -5px;
     top: -3px;
     transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
   }
@@ -59,12 +59,12 @@
 // Switch active style
 input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after,
 input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::after {
-  box-shadow: 0 1px 3px 1px rgba(0,0,0,.4), 0 0 0 15px transparentize($switch-bg-color, .9);
+  box-shadow: 0 1px 3px 1px rgba(0,0,0,.4), if($global-direction == ltr, 0 0 0 15px transparentize($switch-bg-color, .9), 0 15px 0 0 transparentize($switch-bg-color, .9));
 }
 
 input[type=checkbox]:not(:disabled) ~ .lever:active:after,
 input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
-  box-shadow: 0 1px 3px 1px rgba(0,0,0,.4), 0 0 0 15px rgba(0, 0, 0, .08);
+  box-shadow: 0 1px 3px 1px rgba(0,0,0,.4), if($global-direction == ltr, 0 0 0 15px rgba(0, 0, 0, .08), 0 15px 0 0 rgba(0, 0, 0, .08));
 }
 
 // Disabled Styles

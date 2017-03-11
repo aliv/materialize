@@ -66,7 +66,7 @@ textarea.materialize-textarea {
   // Focused input style
   &:focus:not([readonly]) {
     border-bottom: 1px solid $input-focus-color;
-    box-shadow: 0 1px 0 0 $input-focus-color;
+    box-shadow: if($global-direction == ltr, 0 1px 0 0 $input-focus-color, 0 0 0 1px $input-focus-color);
   }
 
   // Focused label style
@@ -78,7 +78,7 @@ textarea.materialize-textarea {
   &.valid,
   &:focus.valid {
     border-bottom: 1px solid $input-success-color;
-    box-shadow: 0 1px 0 0 $input-success-color;
+    box-shadow: if($global-direction == ltr, 0 1px 0 0 $input-success-color, 0 0 0 1px $input-success-color);
   }
 
   // Custom Success Message
@@ -93,7 +93,7 @@ textarea.materialize-textarea {
   &.invalid,
   &:focus.invalid {
     border-bottom: $input-invalid-border;
-    box-shadow: 0 1px 0 0 $input-error-color;
+    box-shadow: if($global-direction == ltr, 0 1px 0 0 $input-error-color, 0 0 0 1px $input-error-color);
   }
 
   // Custom Error message
@@ -127,7 +127,7 @@ textarea.materialize-textarea {
   &.inline {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 5px;
+    margin-#{$global-left}: 5px;
 
     input,
     .select-dropdown {
@@ -138,7 +138,7 @@ textarea.materialize-textarea {
   // Gutter spacing
   &.col {
     label {
-      left: $gutter-width / 2;
+      #{$global-left}: $gutter-width / 2;
     }
 
     .prefix ~ label,
@@ -154,7 +154,7 @@ textarea.materialize-textarea {
     color: $input-border-color;
     position: absolute;
     top: 0.8rem;
-    left: 0;
+    #{$global-left}: 0;
     font-size: 1rem;
     cursor: text;
     transition: .2s ease-out;
@@ -180,12 +180,12 @@ textarea.materialize-textarea {
   .prefix ~ label,
   .prefix ~ .validate ~ label,
   .prefix ~ .autocomplete-content {
-    margin-left: 3rem;
+    margin-#{$global-left}: 3rem;
     width: 92%;
     width: calc(100% - 3rem);
   }
 
-  .prefix ~ label { margin-left: 3rem; }
+  .prefix ~ label { margin-#{$global-left}: 3rem; }
 
   @media #{$medium-and-down} {
     .prefix ~ input {
@@ -208,7 +208,7 @@ textarea.materialize-textarea {
 .input-field input[type=search] {
   display: block;
   line-height: inherit;
-  padding-left: 4rem;
+  padding-#{$global-left}: 4rem;
   width: calc(100% - 4rem);
 
   &:focus {
@@ -225,14 +225,14 @@ textarea.materialize-textarea {
   }
 
   & + label {
-    left: 1rem;
+    #{$global-left}: 1rem;
   }
 
   & ~ .mdi-navigation-close,
   & ~ .material-icons {
     position: absolute;
     top: 0;
-    right: 1rem;
+    #{$global-right}: 1rem;
     color: transparent;
     cursor: pointer;
     font-size: 2rem;
