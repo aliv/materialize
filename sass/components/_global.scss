@@ -209,7 +209,7 @@ video.responsive-video {
   }
 
   &:before {
-    content: '\E5CC';
+    content: if($global-direction == ltr, '\E5CC', '\E5CB');
     color: rgba(255,255,255, .7);
     vertical-align: top;
     display: inline-block;
