@@ -18,7 +18,7 @@
     min-height: $dropdown-item-height;
     line-height: 1.5rem;
     width: 100%;
-    text-align: left;
+    text-align: $global-left;
     text-transform: none;
 
     &:hover, &.active, &.selected {
@@ -44,7 +44,7 @@
 
     & > span > label {
       top: 1px;
-      left: 0;
+      #{$global-left}: 0;
       height: 18px;
     }
 
@@ -52,8 +52,8 @@
     & > a > i {
       height: inherit;
       line-height: inherit;
-      float: left;
-      margin: 0 24px 0 0;
+      float: $global-left;
+      margin: if($global-direction == ltr, 0 24px 0 0, 0 0 0 24px);
       width: 24px;
     }
   }
@@ -62,7 +62,6 @@
 // Input field specificity bugfix
 .input-field.col .dropdown-content [type="checkbox"] + label {
   top: 1px;
-  left: 0;
+  #{$global-left}: 0;
   height: 18px;
 }
-
