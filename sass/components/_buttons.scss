@@ -98,8 +98,8 @@
 
   &.halfway-fab {
     &.left {
-      right: auto;
-      left: 24px;
+      left: auto;
+      right: 24px;
     }
 
     position: absolute;
@@ -151,12 +151,12 @@ button.btn-floating {
     padding: 0 0 0 15px;
 
     ul {
-      text-align: right;
-      right: 64px;
+      text-align: $global-right;
+      #{$global-right}: 64px;
       top: 50%;
       transform: translateY(-50%);
       height: 100%;
-      left: auto;
+      #{$global-left}: auto;
       width: 500px; /*width 100% only goes to width of button container */
 
       li {
@@ -209,7 +209,7 @@ button.btn-floating {
   }
 
   position: fixed;
-  right: 23px;
+  #{$global-right}: 23px;
   bottom: 23px;
   padding-top: 15px;
   margin-bottom: 0;
@@ -236,7 +236,7 @@ button.btn-floating {
   .fab-backdrop {
     position: absolute;
     top: 0;
-    left: 0;
+    #{$global-left}: 0;
     z-index: -1;
     width: $button-floating-size;
     height: $button-floating-size;
