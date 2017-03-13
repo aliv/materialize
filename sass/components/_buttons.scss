@@ -97,13 +97,13 @@
   }
 
   &.halfway-fab {
-    &.left {
-      left: auto;
-      right: 24px;
+    &.#{$global-left} {
+      #{$global-right}: auto;
+      #{$global-left}: 24px;
     }
 
     position: absolute;
-    right: 24px;
+    #{$global-right}: 24px;
     bottom: 0;
     transform: translateY(50%);
   }
