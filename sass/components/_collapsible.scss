@@ -20,9 +20,9 @@
     font-size: 1.6rem;
     line-height: $collapsible-line-height;
     display: block;
-    float: left;
+    float: $global-left;
     text-align: center;
-    margin-right: 1rem;
+    margin-#{$global-right}: 1rem;
   }
 }
 
