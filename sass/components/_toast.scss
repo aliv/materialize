@@ -8,7 +8,7 @@
     bottom: 0%;
   }
   @media #{$medium-only} {
-    left: 5%;
+    #{$global-left}: 5%;
     bottom: 7%;
     max-width: 90%;
   }
@@ -44,7 +44,7 @@
 
   .btn, .btn-flat {
     margin: 0;
-    margin-left: 3rem;
+    margin-#{$global-left}: 3rem;
   }
 
   &.rounded{
@@ -56,10 +56,10 @@
     border-radius: 0;
   }
   @media #{$medium-only} {
-    float: left;
+    float: $global-left;
   }
   @media #{$large-and-up} {
-    float: right;
+    float: $global-right;
   }
 
 }
