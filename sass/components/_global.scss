@@ -622,7 +622,7 @@ td, th{
   .determinate {
     position: absolute;
     top: 0;
-    #{$global-left}: 0;
+    left: 0;
     bottom: 0;
     background-color: $progress-bar-color;
     transition: width .3s linear;
@@ -634,7 +634,7 @@ td, th{
       position: absolute;
       background-color: inherit;
       top: 0;
-      #{$global-left}:0;
+      left:0;
       bottom: 0;
       will-change: left, right;
       // Custom bezier
@@ -646,7 +646,7 @@ td, th{
       position: absolute;
       background-color: inherit;
       top: 0;
-      #{$global-left}:0;
+      left:0;
       bottom: 0;
       will-change: left, right;
       // Custom bezier
@@ -657,31 +657,31 @@ td, th{
 }
 @keyframes indeterminate {
     0% {
-      #{$global-left}: -35%;
-      #{$global-right}:100%;
+      left: -35%;
+      right: 100%;
     }
     60% {
-      #{$global-left}: 100%;
-      #{$global-right}: -90%;
+      left: 100%;
+      right: -90%;
     }
     100% {
-      #{$global-left}: 100%;
-      #{$global-right}: -90%;
+      left: 100%;
+      right: -90%;
     }
 }
 
 @keyframes indeterminate-short {
     0% {
-      #{$global-left}: -200%;
-      #{$global-right}: 100%;
+      left: -200%;
+      right: 100%;
     }
     60% {
-      #{$global-left}: 107%;
-      #{$global-right}: -8%;
+      left: 107%;
+      right: -8%;
     }
     100% {
-      #{$global-left}: 107%;
-      #{$global-right}: -8%;
+      left: 107%;
+      right: -8%;
     }
 }
 
