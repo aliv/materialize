@@ -11,9 +11,11 @@
   margin-bottom: $chip-margin;
   margin-#{$global-right}: $chip-margin;
 
-  img {
+  > img {
     float: $global-left;
     margin: if($global-direction == ltr, 0 8px 0 -12px, 0 -12px 0 8px);
+    float: left;
+    margin: 0 8px 0 -12px;
     height: 32px;
     width: 32px;
     border-radius: 50%;
