@@ -6,7 +6,9 @@
         menuWidth: 300,
         edge: 'left',
         closeOnClick: false,
-        draggable: true
+        draggable: true,
+        onOpen: null,
+        onClose: null
       };
       options = $.extend(defaults, options);
 
@@ -135,7 +137,12 @@
                 }
               });
           }
-        };
+
+          // Callback
+          if (typeof(options.onClose) === 'function') {
+            options.onClose.call(this, menu);
+          }
+        }
 
 
 
@@ -160,6 +167,11 @@
               var x = e.gesture.center.x;
               var y = e.gesture.center.y;
               var velocityX = e.gesture.velocityX;
+
+              // Vertical scroll bugfix
+              if (x === 0 && y === 0) {
+                return;
+              }
 
               // Disable Scrolling
               var $body = $('body');
@@ -332,14 +344,19 @@
                   $(this).remove();
                 } });
 
-            });
-            $('body').append($overlay);
-            $overlay.velocity({opacity: 1}, {duration: 300, queue: false, easing: 'easeOutQuad',
-              complete: function () {
-                menuOut = true;
-                panning = false;
-              }
-            });
+              });
+              $('body').append($overlay);
+              $overlay.velocity({opacity: 1}, {duration: 300, queue: false, easing: 'easeOutQuad',
+                complete: function () {
+                  menuOut = true;
+                  panning = false;
+                }
+              });
+
+            // Callback
+            if (typeof(options.onOpen) === 'function') {
+              options.onOpen.call(this, menu);
+            }
           }
 
           return false;

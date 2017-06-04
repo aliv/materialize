@@ -88,7 +88,7 @@ module.exports = function(grunt) {
           })
         ]
       },
-      expended: {
+      expanded: {
         src: 'dist/css/materialize.css'
       },
       min: {
@@ -573,7 +573,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-banner');
-  grunt.loadNpmTasks('grunt-rename');
+  grunt.loadNpmTasks('grunt-rename-util');
   grunt.loadNpmTasks('grunt-remove-logging');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
@@ -585,7 +585,7 @@ module.exports = function(grunt) {
       'copy',
       'sass:expanded',
       'sass:min',
-      'postcss:expended',
+      'postcss:expanded',
       'postcss:min',
       'concat:dist',
       'uglify:dist',
