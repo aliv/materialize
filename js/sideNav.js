@@ -159,7 +159,7 @@
 
           $dragTarget.hammer({
             prevent_default: false
-          }).bind('pan', function(e) {
+          }).on('pan', function(e) {
 
             if (e.gesture.pointerType == "touch") {
 
@@ -186,6 +186,12 @@
                 $overlay.css('opacity', 0).click( function(){
                   removeMenu();
                 });
+
+                // Run 'onOpen' when sidenav is opened via touch/swipe if applicable
+                if (typeof(options.onOpen) === 'function') {
+                  options.onOpen.call(this, menu);
+                }
+
                 $('body').append($overlay);
               }
 
@@ -232,7 +238,7 @@
               }
             }
 
-          }).bind('panend', function(e) {
+          }).on('panend', function(e) {
 
             if (e.gesture.pointerType == "touch") {
               var $overlay = $('#sidenav-overlay');
@@ -270,6 +276,11 @@
                   menu.velocity({'translateX': [-1 * options.menuWidth - 10, leftPos]}, {duration: 200, queue: false, easing: 'easeOutQuad'});
                   $overlay.velocity({opacity: 0 }, {duration: 200, queue: false, easing: 'easeOutQuad',
                     complete: function () {
+                      // Run 'onClose' when sidenav is closed via touch/swipe if applicable
+                      if (typeof(options.onClose) === 'function') {
+                        options.onClose.call(this, menu);
+                      }
+
                       $(this).remove();
                     }});
                   $dragTarget.css({width: '10px', right: '', left: 0});
@@ -297,6 +308,11 @@
                   menu.velocity({'translateX': [options.menuWidth + 10, rightPos]}, {duration: 200, queue: false, easing: 'easeOutQuad'});
                   $overlay.velocity({opacity: 0 }, {duration: 200, queue: false, easing: 'easeOutQuad',
                     complete: function () {
+                      // Run 'onClose' when sidenav is closed via touch/swipe if applicable
+                      if (typeof(options.onClose) === 'function') {
+                        options.onClose.call(this, menu);
+                      }
+
                       $(this).remove();
                     }});
                   $dragTarget.css({width: '10px', right: 0, left: ''});
@@ -334,24 +350,27 @@
               menu.velocity({'translateX': [0, options.menuWidth]}, {duration: 300, queue: false, easing: 'easeOutQuad'});
             }
 
+            // Overlay close on click
             $overlay.css('opacity', 0)
-            .click(function(){
-              menuOut = false;
-              panning = false;
-              removeMenu();
-              $overlay.velocity({opacity: 0}, {duration: 300, queue: false, easing: 'easeOutQuad',
-                complete: function() {
-                  $(this).remove();
-                } });
+              .click(function() {
+                menuOut = false;
+                panning = false;
+                removeMenu();
+                $overlay.velocity({opacity: 0}, {duration: 300, queue: false, easing: 'easeOutQuad',
+                  complete: function() {
+                    $(this).remove();
+                  }
+                });
+              });
 
-              });
-              $('body').append($overlay);
-              $overlay.velocity({opacity: 1}, {duration: 300, queue: false, easing: 'easeOutQuad',
-                complete: function () {
-                  menuOut = true;
-                  panning = false;
-                }
-              });
+            // Append body
+            $('body').append($overlay);
+            $overlay.velocity({opacity: 1}, {duration: 300, queue: false, easing: 'easeOutQuad',
+              complete: function () {
+                menuOut = true;
+                panning = false;
+              }
+            });
 
             // Callback
             if (typeof(options.onOpen) === 'function') {
