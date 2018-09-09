@@ -75,6 +75,16 @@
     destroy() {
       this._removeEventHandlers();
       this.el.M_Materialbox = undefined;
+<<<<<<< HEAD
+=======
+
+      // Unwrap image
+      $(this.placeholder)
+        .after(this.el)
+        .remove();
+
+      this.$el.removeAttr('style');
+>>>>>>> upstream/v1-dev
     }
 
     /**
@@ -227,7 +237,11 @@
           }
 
           this.$el.removeAttr('style');
+<<<<<<< HEAD
           this.$el.attr('style', this.originInlineStyles);
+=======
+          this.originInlineStyles && this.$el.attr('style', this.originInlineStyles);
+>>>>>>> upstream/v1-dev
 
           // Remove class
           this.$el.removeClass('active');

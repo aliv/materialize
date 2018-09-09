@@ -656,7 +656,11 @@
       }
 
       let index = this.center + n;
+<<<<<<< HEAD
       if (index > this.count || index < 0) {
+=======
+      if (index >= this.count || index < 0) {
+>>>>>>> upstream/v1-dev
         if (this.noWrap) {
           return;
         }
@@ -676,7 +680,11 @@
       }
 
       let index = this.center - n;
+<<<<<<< HEAD
       if (index > this.count || index < 0) {
+=======
+      if (index >= this.count || index < 0) {
+>>>>>>> upstream/v1-dev
         if (this.noWrap) {
           return;
         }

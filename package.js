@@ -3,7 +3,11 @@
 Package.describe({
   name: 'materialize:materialize',  // http://atmospherejs.com/materialize/materialize
   summary: 'Materialize (official): A modern responsive front-end framework based on Material Design',
+<<<<<<< HEAD
   version: '1.0.0-rc.1',
+=======
+  version: '1.0.0-rc.2',
+>>>>>>> upstream/v1-dev
   git: 'https://github.com/Dogfalo/materialize.git'
 });
 

@@ -346,6 +346,10 @@
     }
 
     updateTabIndicator() {
+<<<<<<< HEAD
+=======
+      this._setTabsAndTabWidth();
+>>>>>>> upstream/v1-dev
       this._animateIndicator(this.index);
     }
 

@@ -1,8 +1,11 @@
 module.exports = function(grunt) {
   let concatFile = 'temp/js/materialize_concat.js.map';
 
+<<<<<<< HEAD
   var concatFile = 'temp/js/materialize_concat.js.map';
 
+=======
+>>>>>>> upstream/v1-dev
   // configure the tasks
   let config = {
     //  Jasmine
@@ -658,10 +661,13 @@ module.exports = function(grunt) {
   grunt.task.registerTask('configureBabel', 'configures babel options', function() {
     config.babel.bin.options.inputSourceMap = grunt.file.readJSON(concatFile);
   });
+<<<<<<< HEAD
 
   grunt.task.registerTask("configureBabel", "configures babel options", function() {
     config.babel.bin.options.inputSourceMap = grunt.file.readJSON(concatFile);
   });
+=======
+>>>>>>> upstream/v1-dev
 
   grunt.registerTask('jade_compile', ['jade', 'notify:jade_compile']);
   grunt.registerTask('js_compile', ['concat:temp', 'configureBabel', 'babel:bin', 'clean:temp']);

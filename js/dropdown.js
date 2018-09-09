@@ -295,8 +295,47 @@
           .first();
 
         // Click a or button tag if exists, otherwise click li tag
+<<<<<<< HEAD
         !!$activatableElement.length ? $activatableElement[0].click() : focusedElement.click();
 
+        // Close dropdown on ESC
+      } else if (e.which === M.keys.ESC && this.isOpen) {
+        e.preventDefault();
+        this.close();
+      }
+
+      // CASE WHEN USER TYPE LETTERS
+      let letter = String.fromCharCode(e.which).toLowerCase(),
+        nonLetters = [9, 13, 27, 38, 40];
+      if (letter && nonLetters.indexOf(e.which) === -1) {
+        this.filterQuery.push(letter);
+
+        let string = this.filterQuery.join(''),
+          newOptionEl = $(this.dropdownEl)
+            .find('li')
+            .filter((el) => {
+              return (
+                $(el)
+                  .text()
+                  .toLowerCase()
+                  .indexOf(string) === 0
+              );
+            })[0];
+
+        if (newOptionEl) {
+          this.focusedIndex = $(newOptionEl).index();
+          this._focusFocusedItem();
+=======
+        if (!!$activatableElement.length) {
+          $activatableElement[0].click();
+        } else if (!!focusedElement) {
+          focusedElement.click();
+>>>>>>> upstream/v1-dev
+        }
+      }
+
+<<<<<<< HEAD
+=======
         // Close dropdown on ESC
       } else if (e.which === M.keys.ESC && this.isOpen) {
         e.preventDefault();
@@ -327,6 +366,7 @@
         }
       }
 
+>>>>>>> upstream/v1-dev
       this.filterTimeout = setTimeout(this._resetFilterQueryBound, 1000);
     }
 
@@ -349,6 +389,7 @@
         opacity: ''
       });
     }
+<<<<<<< HEAD
 
     _makeDropdownFocusable() {
       // Needed for arrow key navigation
@@ -413,6 +454,75 @@
         } else {
           this.isScrollable = true;
 
+=======
+
+    _makeDropdownFocusable() {
+      // Needed for arrow key navigation
+      this.dropdownEl.tabIndex = 0;
+
+      // Only set tabindex if it hasn't been set by user
+      $(this.dropdownEl)
+        .children()
+        .each(function(el) {
+          if (!el.getAttribute('tabindex')) {
+            el.setAttribute('tabindex', 0);
+          }
+        });
+    }
+
+    _focusFocusedItem() {
+      if (
+        this.focusedIndex >= 0 &&
+        this.focusedIndex < this.dropdownEl.children.length &&
+        this.options.autoFocus
+      ) {
+        this.dropdownEl.children[this.focusedIndex].focus();
+      }
+    }
+
+    _getDropdownPosition() {
+      let offsetParentBRect = this.el.offsetParent.getBoundingClientRect();
+      let triggerBRect = this.el.getBoundingClientRect();
+      let dropdownBRect = this.dropdownEl.getBoundingClientRect();
+
+      let idealHeight = dropdownBRect.height;
+      let idealWidth = dropdownBRect.width;
+      let idealXPos = triggerBRect.left - dropdownBRect.left;
+      let idealYPos = triggerBRect.top - dropdownBRect.top;
+
+      let dropdownBounds = {
+        left: idealXPos,
+        top: idealYPos,
+        height: idealHeight,
+        width: idealWidth
+      };
+
+      // Countainer here will be closest ancestor with overflow: hidden
+      let closestOverflowParent = !!this.dropdownEl.offsetParent
+        ? this.dropdownEl.offsetParent
+        : this.dropdownEl.parentNode;
+
+      let alignments = M.checkPossibleAlignments(
+        this.el,
+        closestOverflowParent,
+        dropdownBounds,
+        this.options.coverTrigger ? 0 : triggerBRect.height
+      );
+
+      let verticalAlignment = 'top';
+      let horizontalAlignment = this.options.alignment;
+      idealYPos += this.options.coverTrigger ? 0 : triggerBRect.height;
+
+      // Reset isScrollable
+      this.isScrollable = false;
+
+      if (!alignments.top) {
+        if (alignments.bottom) {
+          verticalAlignment = 'bottom';
+        } else {
+          this.isScrollable = true;
+
+>>>>>>> upstream/v1-dev
           // Determine which side has most space and cutoff at correct height
           if (alignments.spaceOnTop > alignments.spaceOnBottom) {
             verticalAlignment = 'bottom';
@@ -441,6 +551,7 @@
           }
         }
       }
+<<<<<<< HEAD
 
       if (verticalAlignment === 'bottom') {
         idealYPos =
@@ -459,6 +570,26 @@
       };
     }
 
+=======
+
+      if (verticalAlignment === 'bottom') {
+        idealYPos =
+          idealYPos - dropdownBRect.height + (this.options.coverTrigger ? triggerBRect.height : 0);
+      }
+      if (horizontalAlignment === 'right') {
+        idealXPos = idealXPos - dropdownBRect.width + triggerBRect.width;
+      }
+      return {
+        x: idealXPos,
+        y: idealYPos,
+        verticalAlignment: verticalAlignment,
+        horizontalAlignment: horizontalAlignment,
+        height: idealHeight,
+        width: idealWidth
+      };
+    }
+
+>>>>>>> upstream/v1-dev
     /**
      * Animate in dropdown
      */
@@ -481,8 +612,12 @@
 
           // onOpenEnd callback
           if (typeof this.options.onOpenEnd === 'function') {
+<<<<<<< HEAD
             let elem = anim.animatables[0].target;
             this.options.onOpenEnd.call(elem, this.el);
+=======
+            this.options.onOpenEnd.call(this, this.el);
+>>>>>>> upstream/v1-dev
           }
         }
       });
@@ -508,7 +643,10 @@
 
           // onCloseEnd callback
           if (typeof this.options.onCloseEnd === 'function') {
+<<<<<<< HEAD
             let elem = anim.animatables[0].target;
+=======
+>>>>>>> upstream/v1-dev
             this.options.onCloseEnd.call(this, this.el);
           }
         }

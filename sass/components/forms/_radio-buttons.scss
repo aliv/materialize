@@ -81,7 +81,11 @@
 
 /* Focused styles */
 [type="radio"].tabbed:focus + span:before {
+<<<<<<< HEAD
   box-shadow: if($global-direction == ltr, 0 0 0 10px rgba(0,0,0,.1), 0 10px 0 0 rgba(0,0,0,.1));
+=======
+  box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+>>>>>>> upstream/v1-dev
 }
 
 /* Disabled Radio With gap */

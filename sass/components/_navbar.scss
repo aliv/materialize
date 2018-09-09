@@ -43,7 +43,11 @@ nav {
 
   // Collapse button
   .sidenav-trigger {
+<<<<<<< HEAD
     float: $global-left;
+=======
+    float: left;
+>>>>>>> upstream/v1-dev
     position: relative;
     z-index: 1;
     height: $navbar-height-mobile;

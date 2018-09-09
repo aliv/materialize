@@ -135,8 +135,17 @@
         }
 
         // Set selected on original select option
+<<<<<<< HEAD
         $(this._valueDict[key].el).prop('selected', selected);
         this.$el.trigger('change');
+=======
+        // Only trigger if selected state changed
+        let prevSelected = $(this._valueDict[key].el).prop('selected');
+        if (prevSelected !== selected) {
+          $(this._valueDict[key].el).prop('selected', selected);
+          this.$el.trigger('change');
+        }
+>>>>>>> upstream/v1-dev
       }
 
       e.stopPropagation();
@@ -231,12 +240,31 @@
           let selectedOption = $(this.dropdownOptions)
             .find('.selected')
             .first();
+<<<<<<< HEAD
           if (this.dropdown.isScrollable && selectedOption.length) {
             let scrollOffset =
               selectedOption[0].getBoundingClientRect().top -
               this.dropdownOptions.getBoundingClientRect().top; // scroll to selected option
             scrollOffset -= this.dropdownOptions.clientHeight / 2; // center in dropdown
             this.dropdownOptions.scrollTop = scrollOffset;
+=======
+
+          if (selectedOption.length) {
+            // Focus selected option in dropdown
+            M.keyDown = true;
+            this.dropdown.focusedIndex = selectedOption.index();
+            this.dropdown._focusFocusedItem();
+            M.keyDown = false;
+
+            // Handle scrolling to selected option
+            if (this.dropdown.isScrollable) {
+              let scrollOffset =
+                selectedOption[0].getBoundingClientRect().top -
+                this.dropdownOptions.getBoundingClientRect().top; // scroll to selected option
+              scrollOffset -= this.dropdownOptions.clientHeight / 2; // center in dropdown
+              this.dropdownOptions.scrollTop = scrollOffset;
+            }
+>>>>>>> upstream/v1-dev
           }
         };
 

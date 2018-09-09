@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 /*!
  * Materialize v1.0.0-rc.1 (http://materializecss.com)
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+=======
+/*!
+ * Materialize v1.0.0-rc.2 (http://materializecss.com)
+ * Copyright 2014-2017 Materialize
+ * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ */
+>>>>>>> upstream/v1-dev
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -2253,7 +2261,13 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
+<<<<<<< HEAD
   text-decoration: underline dotted;
+=======
+  -webkit-text-decoration: underline dotted;
+     -moz-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+>>>>>>> upstream/v1-dev
   /* 2 */
 }
 
@@ -2473,6 +2487,7 @@ progress {
   /* 1 */
   vertical-align: baseline;
   /* 2 */
+<<<<<<< HEAD
 }
 
 /**
@@ -2483,6 +2498,18 @@ textarea {
 }
 
 /**
+=======
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+>>>>>>> upstream/v1-dev
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
@@ -5187,8 +5214,13 @@ small {
 .btn-small:disabled,
 .btn-flat:disabled,
 .btn[disabled],
+<<<<<<< HEAD
 [disabled].btn-large,
 [disabled].btn-small,
+=======
+.btn-large[disabled],
+.btn-small[disabled],
+>>>>>>> upstream/v1-dev
 .btn-floating[disabled],
 .btn-large[disabled],
 .btn-small[disabled],
@@ -5214,8 +5246,13 @@ small {
 .btn-small:disabled:hover,
 .btn-flat:disabled:hover,
 .btn[disabled]:hover,
+<<<<<<< HEAD
 [disabled].btn-large:hover,
 [disabled].btn-small:hover,
+=======
+.btn-large[disabled]:hover,
+.btn-small[disabled]:hover,
+>>>>>>> upstream/v1-dev
 .btn-floating[disabled]:hover,
 .btn-large[disabled]:hover,
 .btn-small[disabled]:hover,
@@ -5614,6 +5651,13 @@ body.keyboard-focused .dropdown-content li:focus {
   height: 18px;
   -webkit-transform: none;
           transform: none;
+<<<<<<< HEAD
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+=======
+>>>>>>> upstream/v1-dev
 }
 
 .dropdown-trigger {
@@ -5759,6 +5803,10 @@ body.keyboard-focused .dropdown-content li:focus {
   overflow-y: auto;
   border-radius: 2px;
   will-change: top, opacity;
+}
+
+.modal:focus {
+  outline: none;
 }
 
 @media only screen and (max-width: 992px) {
@@ -6107,6 +6155,9 @@ label {
 :-ms-input-placeholder {
   color: #d1d1d1;
 }
+::-ms-input-placeholder {
+  color: #d1d1d1;
+}
 ::placeholder {
   color: #d1d1d1;
 }
@@ -6287,28 +6338,28 @@ textarea.materialize-textarea.validate + label {
 
 /* Validation Sass Placeholders */
 input.valid:not([type]), input.valid:not([type]):focus,
-input[type=text].valid:not(.browser-default),
-input[type=text].valid:not(.browser-default):focus,
-input[type=password].valid:not(.browser-default),
-input[type=password].valid:not(.browser-default):focus,
-input[type=email].valid:not(.browser-default),
-input[type=email].valid:not(.browser-default):focus,
-input[type=url].valid:not(.browser-default),
-input[type=url].valid:not(.browser-default):focus,
-input[type=time].valid:not(.browser-default),
-input[type=time].valid:not(.browser-default):focus,
-input[type=date].valid:not(.browser-default),
-input[type=date].valid:not(.browser-default):focus,
-input[type=datetime].valid:not(.browser-default),
-input[type=datetime].valid:not(.browser-default):focus,
-input[type=datetime-local].valid:not(.browser-default),
-input[type=datetime-local].valid:not(.browser-default):focus,
-input[type=tel].valid:not(.browser-default),
-input[type=tel].valid:not(.browser-default):focus,
-input[type=number].valid:not(.browser-default),
-input[type=number].valid:not(.browser-default):focus,
-input[type=search].valid:not(.browser-default),
-input[type=search].valid:not(.browser-default):focus,
+input.valid[type=text]:not(.browser-default),
+input.valid[type=text]:not(.browser-default):focus,
+input.valid[type=password]:not(.browser-default),
+input.valid[type=password]:not(.browser-default):focus,
+input.valid[type=email]:not(.browser-default),
+input.valid[type=email]:not(.browser-default):focus,
+input.valid[type=url]:not(.browser-default),
+input.valid[type=url]:not(.browser-default):focus,
+input.valid[type=time]:not(.browser-default),
+input.valid[type=time]:not(.browser-default):focus,
+input.valid[type=date]:not(.browser-default),
+input.valid[type=date]:not(.browser-default):focus,
+input.valid[type=datetime]:not(.browser-default),
+input.valid[type=datetime]:not(.browser-default):focus,
+input.valid[type=datetime-local]:not(.browser-default),
+input.valid[type=datetime-local]:not(.browser-default):focus,
+input.valid[type=tel]:not(.browser-default),
+input.valid[type=tel]:not(.browser-default):focus,
+input.valid[type=number]:not(.browser-default),
+input.valid[type=number]:not(.browser-default):focus,
+input.valid[type=search]:not(.browser-default),
+input.valid[type=search]:not(.browser-default):focus,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-dropdown {
   border-bottom: 1px solid #4CAF50;
@@ -6317,28 +6368,28 @@ textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-
 }
 
 input.invalid:not([type]), input.invalid:not([type]):focus,
-input[type=text].invalid:not(.browser-default),
-input[type=text].invalid:not(.browser-default):focus,
-input[type=password].invalid:not(.browser-default),
-input[type=password].invalid:not(.browser-default):focus,
-input[type=email].invalid:not(.browser-default),
-input[type=email].invalid:not(.browser-default):focus,
-input[type=url].invalid:not(.browser-default),
-input[type=url].invalid:not(.browser-default):focus,
-input[type=time].invalid:not(.browser-default),
-input[type=time].invalid:not(.browser-default):focus,
-input[type=date].invalid:not(.browser-default),
-input[type=date].invalid:not(.browser-default):focus,
-input[type=datetime].invalid:not(.browser-default),
-input[type=datetime].invalid:not(.browser-default):focus,
-input[type=datetime-local].invalid:not(.browser-default),
-input[type=datetime-local].invalid:not(.browser-default):focus,
-input[type=tel].invalid:not(.browser-default),
-input[type=tel].invalid:not(.browser-default):focus,
-input[type=number].invalid:not(.browser-default),
-input[type=number].invalid:not(.browser-default):focus,
-input[type=search].invalid:not(.browser-default),
-input[type=search].invalid:not(.browser-default):focus,
+input.invalid[type=text]:not(.browser-default),
+input.invalid[type=text]:not(.browser-default):focus,
+input.invalid[type=password]:not(.browser-default),
+input.invalid[type=password]:not(.browser-default):focus,
+input.invalid[type=email]:not(.browser-default),
+input.invalid[type=email]:not(.browser-default):focus,
+input.invalid[type=url]:not(.browser-default),
+input.invalid[type=url]:not(.browser-default):focus,
+input.invalid[type=time]:not(.browser-default),
+input.invalid[type=time]:not(.browser-default):focus,
+input.invalid[type=date]:not(.browser-default),
+input.invalid[type=date]:not(.browser-default):focus,
+input.invalid[type=datetime]:not(.browser-default),
+input.invalid[type=datetime]:not(.browser-default):focus,
+input.invalid[type=datetime-local]:not(.browser-default),
+input.invalid[type=datetime-local]:not(.browser-default):focus,
+input.invalid[type=tel]:not(.browser-default),
+input.invalid[type=tel]:not(.browser-default):focus,
+input.invalid[type=number]:not(.browser-default),
+input.invalid[type=number]:not(.browser-default):focus,
+input.invalid[type=search]:not(.browser-default),
+input.invalid[type=search]:not(.browser-default):focus,
 textarea.materialize-textarea.invalid,
 textarea.materialize-textarea.invalid:focus, .select-wrapper.invalid > input.select-dropdown,
 .select-wrapper.invalid > input.select-dropdown:focus {
@@ -7178,12 +7229,21 @@ select {
       -ms-user-select: none;
           user-select: none;
   z-index: 1;
+<<<<<<< HEAD
 }
 
 .select-wrapper input.select-dropdown:focus {
   border-bottom: 1px solid #26a69a;
 }
 
+=======
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #26a69a;
+}
+
+>>>>>>> upstream/v1-dev
 .select-wrapper .caret {
   position: absolute;
   right: 0;
@@ -8477,6 +8537,7 @@ input[type=range]::-ms-thumb {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+<<<<<<< HEAD
   -webkit-transition: opacity .3s,
  visibility 0s 1s,
  -webkit-transform .3s;
@@ -8490,6 +8551,12 @@ input[type=range]::-ms-thumb {
  transform .3s,
  visibility 0s 1s,
  -webkit-transform .3s;
+=======
+  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
+>>>>>>> upstream/v1-dev
 }
 
 .tap-target {
@@ -8542,6 +8609,7 @@ input[type=range]::-ms-thumb {
 
 .tap-target-wave::after {
   visibility: hidden;
+<<<<<<< HEAD
   -webkit-transition: opacity .3s,
  visibility 0s,
  -webkit-transform .3s;
@@ -8555,6 +8623,12 @@ input[type=range]::-ms-thumb {
  transform .3s,
  visibility 0s,
  -webkit-transform .3s;
+=======
+  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s;
+  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
+>>>>>>> upstream/v1-dev
   z-index: -1;
 }
 
@@ -8643,6 +8717,7 @@ input[type=range]::-ms-thumb {
   max-width: 325px;
   min-width: 300px;
   max-height: none;
+<<<<<<< HEAD
 }
 
 .datepicker-container.modal-content {
@@ -8650,6 +8725,34 @@ input[type=range]::-ms-thumb {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+}
+
+.datepicker-controls {
+=======
+}
+
+.datepicker-container.modal-content {
+>>>>>>> upstream/v1-dev
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+<<<<<<< HEAD
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 280px;
+  margin: 0 auto;
+}
+
+=======
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -8671,6 +8774,7 @@ input[type=range]::-ms-thumb {
   margin: 0 auto;
 }
 
+>>>>>>> upstream/v1-dev
 .datepicker-controls .selects-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8794,12 +8898,21 @@ input[type=range]::-ms-thumb {
   padding: 0 5px;
   cursor: pointer;
   color: inherit;
+<<<<<<< HEAD
 }
 
 .datepicker-day-button:focus {
   background-color: rgba(43, 161, 150, 0.25);
 }
 
+=======
+}
+
+.datepicker-day-button:focus {
+  background-color: rgba(43, 161, 150, 0.25);
+}
+
+>>>>>>> upstream/v1-dev
 /* Footer */
 .datepicker-footer {
   width: 280px;
