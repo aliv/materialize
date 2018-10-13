@@ -4,9 +4,13 @@
   "author": "Alvin Wang, Alan Chang",
   "homepage": "http://materializecss.com/",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "version": "1.0.0-rc.1",
 =======
   "version": "1.0.0-rc.2",
+>>>>>>> upstream/v1-dev
+=======
+  "version": "1.0.0",
 >>>>>>> upstream/v1-dev
   "main": "dist/js/materialize.js",
   "style": "dist/css/materialize.css",
