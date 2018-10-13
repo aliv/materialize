@@ -101,7 +101,6 @@
   &.btn-small {
     &.halfway-fab {
       bottom: -$button-floating-small-size / 2;
-<<<<<<< HEAD
     }
     width: $button-floating-small-size;
     height: $button-floating-small-size;
@@ -115,21 +114,6 @@
       #{$global-right}: auto;
       #{$global-left}: 24px;
     }
-=======
-    }
-    width: $button-floating-small-size;
-    height: $button-floating-small-size;
-    i {
-      line-height: $button-floating-small-size;
-    }
-  }
-
-  &.halfway-fab {
-    &.left {
-      right: auto;
-      left: 24px;
-    }
->>>>>>> upstream/v1-dev
     position: absolute;
     #{$global-right}: 24px;
     bottom: -$button-floating-size / 2;
@@ -182,11 +166,7 @@ button.btn-floating {
       top: 50%;
       transform: translateY(-50%);
       height: 100%;
-<<<<<<< HEAD
       #{$global-left}: auto;
-=======
-      left: auto;
->>>>>>> upstream/v1-dev
       /*width 100% only goes to width of button container */
       width: 500px;
       li {

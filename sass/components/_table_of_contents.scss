@@ -13,11 +13,7 @@
     display: inline-block;
     font-weight: 300;
     color: #757575;
-<<<<<<< HEAD
     padding-#{$global-left}: 16px;
-=======
-    padding-left: 16px;
->>>>>>> upstream/v1-dev
     height: 1.5rem;
     line-height: 1.5rem;
     letter-spacing: .4;
@@ -25,7 +21,6 @@
 
     &:hover {
       color: lighten(#757575, 20%);
-<<<<<<< HEAD
       padding-#{$global-left}: 15px;
       border-#{$global-left}: 1px solid $primary-color;
     }
@@ -33,15 +28,6 @@
       font-weight: 500;
       padding-#{$global-left}: 14px;
       border-#{$global-left}: 2px solid $primary-color;
-=======
-      padding-left: 15px;
-      border-left: 1px solid $primary-color;
-    }
-    &.active {
-      font-weight: 500;
-      padding-left: 14px;
-      border-left: 2px solid $primary-color;
->>>>>>> upstream/v1-dev
     }
   }
 }

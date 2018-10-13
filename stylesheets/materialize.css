@@ -1,22 +1,22 @@
 /*
 Error: Invalid CSS after "..., "lighten-2") ": expected "{", was "!default;"
-        on line 41 of D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/components/_variables.scss
+        on line 38 of D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/components/_variables.scss
         from line 8 of D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/materialize.scss
 
-36: 
+33: 
+34: 
+35: // 1. Colors
+36: // ==========================================================================
 37: 
-38: // 1. Colors
-39: // ==========================================================================
-40: 
-41: $primary-color: color("materialize-red", "lighten-2") !default;
-42: $primary-color-light: lighten($primary-color, 15%) !default;
-43: $primary-color-dark: darken($primary-color, 15%) !default;
-44: 
-45: $secondary-color: color("teal", "lighten-1") !default;
-46: $success-color: color("green", "base") !default;
+38: $primary-color: color("materialize-red", "lighten-2") !default;
+39: $primary-color-light: lighten($primary-color, 15%) !default;
+40: $primary-color-dark: darken($primary-color, 15%) !default;
+41: 
+42: $secondary-color: color("teal", "lighten-1") !default;
+43: $success-color: color("green", "base") !default;
 
 Backtrace:
-D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/components/_variables.scss:41
+D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/components/_variables.scss:38
 D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/materialize.scss:8
 d:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
 d:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
@@ -74,4 +74,4 @@ d:/Ruby22/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"..., \"lighten-2\") \": expected \"{\", was \"!default;\"\A         on line 41 of D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/components/_variables.scss\A         from line 8 of D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/materialize.scss\A \A 36: \A 37: \A 38: // 1. Colors\A 39: // ==========================================================================\A 40: \A 41: $primary-color: color(\"materialize-red\", \"lighten-2\") !default;\A 42: $primary-color-light: lighten($primary-color, 15%) !default;\A 43: $primary-color-dark: darken($primary-color, 15%) !default;\A 44: \A 45: $secondary-color: color(\"teal\", \"lighten-1\") !default;\A 46: $success-color: color(\"green\", \"base\") !default;"; }
+  content: "Error: Invalid CSS after \"..., \"lighten-2\") \": expected \"{\", was \"!default;\"\A         on line 38 of D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/components/_variables.scss\A         from line 8 of D:/webserver/apache/htdocs/materialize-rtl/materialize/sass/materialize.scss\A \A 33: \A 34: \A 35: // 1. Colors\A 36: // ==========================================================================\A 37: \A 38: $primary-color: color(\"materialize-red\", \"lighten-2\") !default;\A 39: $primary-color-light: lighten($primary-color, 15%) !default;\A 40: $primary-color-dark: darken($primary-color, 15%) !default;\A 41: \A 42: $secondary-color: color(\"teal\", \"lighten-1\") !default;\A 43: $success-color: color(\"green\", \"base\") !default;"; }
