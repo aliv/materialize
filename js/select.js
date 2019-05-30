@@ -239,6 +239,7 @@
       // Initialize dropdown
       if (!this.el.disabled) {
         let dropdownOptions = $.extend({}, this.options.dropdownOptions);
+        let userOnOpenEnd = dropdownOptions.onOpenEnd;
 
         // Add callback for centering selected option when dropdown content is scrollable
         dropdownOptions.onOpenEnd = (el) => {
@@ -270,6 +271,11 @@
               this.dropdownOptions.scrollTop = scrollOffset;
             }
 >>>>>>> upstream/v1-dev
+          }
+
+          // Handle user declared onOpenEnd if needed
+          if (userOnOpenEnd && typeof userOnOpenEnd === 'function') {
+            userOnOpenEnd.call(this.dropdown, this.el);
           }
         };
 
